@@ -1,0 +1,13 @@
+@import 'colors';
+
+footer{
+    background-color: $light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    color: $dark;
+    position: absolute;
+    bottom: 0;    
+    width: 100%;
+}

@@ -1,0 +1,96 @@
+@import 'colors';
+@import 'constants';
+@import 'media-queries';
+
+%before-after-case{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0;
+    top: 0;
+    background-color: $blue;
+    transition: 0.5s ease-in-out;
+    border-radius: $borderRadius;
+}
+
+.showcase_container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+
+    &_left{
+       margin-top: 150px;
+       text-align: left;
+        margin-left: 20px;
+        flex-basis: 45%;
+       h1{
+        margin-top: 20px;
+        color: $blue;
+        font-size: 50px;
+        @include tablet{
+            font-size: 40px;
+        }
+       }
+
+       h2{
+        font-size: 30px;
+        margin-top: 10px;
+       }
+
+       p{
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 10px;
+       }
+
+       &_signup{
+        font-size: 1rem;
+        background-color: $Green;
+        padding: 15px 30px;
+        border: none;
+        border-radius: $borderRadius;
+        margin-top: 2rem;
+        cursor: pointer;
+        position: relative;
+        transition: 0.3s;
+        outline: none;
+        a{
+            color: $light;
+            z-index: 2;
+            position: relative;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        &::after{
+            right: 50%;
+            @extend %before-after-case;
+        }
+        &::before{
+            left: 50%;
+            @extend %before-after-case;
+        }
+        &:hover::after{
+            width: 50%;
+        }
+        &:hover::before{
+            width: 50%;
+        }
+
+       }
+    }
+
+    &_right{
+        flex-basis:45% ;
+    }
+
+  
+}
+
+.showcase_container_right-img{
+    width: 500px;
+    margin-top: 150px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px black;
+}
+
